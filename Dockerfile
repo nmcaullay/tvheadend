@@ -174,6 +174,7 @@ RUN \
 	--disable-dbus_1 \
 	--disable-bintray_cache \
 	--disable-hdhomerun_static \
+	--disable-upnp \
 	--enable-hdhomerun_client \
 	--enable-libav \
 	--enable-pngquant \
