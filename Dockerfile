@@ -11,7 +11,8 @@ ARG TVHEADEND_COMMIT
 ENV HOME="/config"
 
 # copy patches
-COPY patches/ /tmp/patches/
+#COPY patches/ /tmp/patches/
+RUN WGET https://github.com/linuxserver/docker-tvheadend/tree/master/patches /tmp/
 
 RUN \
  echo "**** install build packages ****" && \
