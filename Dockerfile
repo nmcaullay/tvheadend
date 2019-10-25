@@ -113,7 +113,7 @@ RUN \
 	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
 	gnu-libiconv-dev
 
-# copy patches
+# copy patches, moved down here after WGET is installed
 RUN WGET https://github.com/linuxserver/docker-tvheadend/tree/master/patches /tmp/
 
 RUN \
