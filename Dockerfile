@@ -12,7 +12,6 @@ ENV HOME="/config"
 
 # copy patches
 #COPY patches/ /tmp/patches/
-RUN WGET https://github.com/linuxserver/docker-tvheadend/tree/master/patches /tmp/
 
 RUN \
  echo "**** install build packages ****" && \
@@ -113,6 +112,9 @@ RUN \
  apk add --no-cache \
 	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
 	gnu-libiconv-dev
+
+# copy patches
+RUN WGET https://github.com/linuxserver/docker-tvheadend/tree/master/patches /tmp/
 
 RUN \
  echo "**** remove musl iconv.h and replace with gnu-iconv.h ****" && \
