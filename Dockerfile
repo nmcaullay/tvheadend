@@ -114,7 +114,10 @@ RUN \
 	gnu-libiconv-dev
 
 # copy patches, moved down here after WGET is installed
-RUN /usr/bin/wget https://github.com/linuxserver/docker-tvheadend/tree/master/patches/* /tmp/patches/
+RUN mkdir /tmp/patches
+RUN /usr/bin/wget https://github.com/linuxserver/docker-tvheadend/tree/master/patches/config.guess /tmp/patches/
+RUN /usr/bin/wget https://github.com/linuxserver/docker-tvheadend/tree/master/patches/config.sub /tmp/patches/
+RUN /usr/bin/wget https://github.com/linuxserver/docker-tvheadend/tree/master/patches/cpanfile /tmp/patches/
 
 RUN \
  echo "**** remove musl iconv.h and replace with gnu-iconv.h ****" && \
