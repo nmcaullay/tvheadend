@@ -11,7 +11,7 @@ ARG TVHEADEND_COMMIT
 ENV HOME="/config"
 
 # copy patches
-#COPY patches/ /tmp/patches/
+COPY patches/ /tmp/patches/
 
 RUN \
  echo "**** install build packages ****" && \
@@ -113,11 +113,11 @@ RUN \
 	--repository http://dl-cdn.alpinelinux.org/alpine/edge/community \
 	gnu-libiconv-dev
 
-# copy patches, moved down here after WGET is installed
-RUN mkdir /tmp/patches
-RUN /usr/bin/wget https://github.com/linuxserver/docker-tvheadend/tree/master/patches/config.guess -O /tmp/patches/config.guess
-RUN /usr/bin/wget https://github.com/linuxserver/docker-tvheadend/tree/master/patches/config.sub -O /tmp/patches/config.sub
-RUN /usr/bin/wget https://github.com/linuxserver/docker-tvheadend/tree/master/patches/cpanfile -O /tmp/patches/cpanfile
+## copy patches, moved down here after WGET is installed
+#RUN mkdir /tmp/patches
+#RUN /usr/bin/wget https://github.com/linuxserver/docker-tvheadend/tree/master/patches/config.guess -O /tmp/patches/config.guess
+#RUN /usr/bin/wget https://github.com/linuxserver/docker-tvheadend/tree/master/patches/config.sub -O /tmp/patches/config.sub
+#RUN /usr/bin/wget https://github.com/linuxserver/docker-tvheadend/tree/master/patches/cpanfile -O /tmp/patches/cpanfile
 
 RUN \
  echo "**** remove musl iconv.h and replace with gnu-iconv.h ****" && \
