@@ -126,8 +126,9 @@ RUN \
 
 RUN \
  echo "**** install perl modules for xmltv ****" && \
- curl -L https://cpanmin.us | perl - App::cpanminus && \
- cpanm --installdeps /tmp/patches
+ curl -L https://cpanmin.us | perl - App::cpanminus
+ ##curl -L https://cpanmin.us | perl - App::cpanminus && \
+ ##cpanm --installdeps /tmp/patches
 
 RUN \
  echo "**** compile XMLTV ****" && \
