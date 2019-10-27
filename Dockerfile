@@ -126,9 +126,9 @@ RUN \
 
 RUN \
  echo "**** install perl modules for xmltv ****" && \
- curl -L https://cpanmin.us | perl - App::cpanminus
- ##curl -L https://cpanmin.us | perl - App::cpanminus && \
- ##cpanm --installdeps /tmp/patches
+ ##curl -L https://cpanmin.us | perl - App::cpanminus
+ curl -L https://cpanmin.us | perl - App::cpanminus && \
+ cpanm --installdeps /tmp/patches
 
 RUN \
  echo "**** compile XMLTV ****" && \
@@ -339,7 +339,7 @@ COPY --from=buildstage /tmp/tvheadend-build/usr/ /usr/
 COPY --from=buildstage /tmp/xmltv-build/usr/ /usr/
 COPY --from=buildstage /usr/local/share/man/ /usr/local/share/man/
 COPY --from=buildstage /usr/local/share/perl5/ /usr/local/share/perl5/
-COPY root/ /
+##COPY root/ /
 
 # ports and volumes
 EXPOSE 9981 9982
